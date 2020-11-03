@@ -12,8 +12,9 @@ db.once('open', function() {
 });
 
 var itemSchema = mongoose.Schema({
-  quantity: Number,
-  description: String
+  name: String,
+  createTime: { type: Date, default: Date.now },
+  comment: String
 });
 
 var Item = mongoose.model('Item', itemSchema);
@@ -28,4 +29,17 @@ var selectAll = function(callback) {
   });
 };
 
-module.exports.selectAll = selectAll;
+const postComment = function(result,cb) {
+const {name , comment} =result;
+
+const Comment = new Item ({
+  name : name,
+  comment : comment
+})
+
+Comment.save(cb);
+
+
+}
+
+module.exports = {selectAll , postComment};

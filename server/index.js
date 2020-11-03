@@ -4,18 +4,33 @@ var items = require('../database-mongo');
 var path =require('path');
 
 var app = express();
+app.use(bodyParser.json());
 
 
 app.use(express.static(__dirname + '/../react-client/dist'));
 
 
-app.get('/items', function (req, res) {
+app.get('/comments', function (req, res) {
   items.selectAll(function(err, data) {
     if(err) {
       res.sendStatus(500);
     } else {
       res.json(data);
     }
+  });
+});
+
+app.post('/comments', (req, res) => {
+
+  const result = req.body;
+  console.log(result);
+  items.postComment( result, (err, data) => {
+    if(err) {
+      res.sendStatus(500);
+    } else {
+      res.sendStatus(201);
+    }
+
   });
 });
 

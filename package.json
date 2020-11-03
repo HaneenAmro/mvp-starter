@@ -30,6 +30,7 @@
     "react-dom": "^16.14.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.0",
+    "react-scrollbar": "^0.5.6",
     "style-loader": "^2.0.0",
     "styled-components": "^5.2.1",
     "url-loader": "^4.1.1"
