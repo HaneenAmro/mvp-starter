@@ -37,7 +37,7 @@ const Dialog = styled.div`
 
     h1 {
       font-family :papyrus;
-      margin-left :25%;
+      margin-left :10%;
       margin-top :4%;
       color :rgb(1, 105, 110);
 
@@ -81,17 +81,28 @@ border-color :rgb(1, 105, 110);
 border-width: 1px;
 position: relative;
 height: 50vh;
-background:rgb(235 200 169);
+background:white;
 margin-left : 9%;
+margin-top :-1%;
+box-shadow: 10px 10px 8px rgb(1, 105, 110);
 
 `;
 
 const Button1 = styled.button`
 cursor: pointer !important;
 text-align: center;
-border-radius: 10% !important;
+border-radius: 10% ;
 font-size :100% ;
-color : rgb(1, 105, 110);
+outline :none;
+color :rgb(235 200 169);
+background-color :rgb(1, 105, 110);
+margin-left : 42%;
+margin-top :2%;
+height : 4vh;
+width : 9vw;
+: hover {
+  opacity:0.6;
+}
 `;
 
 
@@ -102,14 +113,22 @@ class Comments extends React.Component {
     super(props);
     this.state = {
       isClicked: false,
+      comment :false,
     }
     this.handleClick = this.handleClick.bind(this);
+    this.handleComment = this.handleComment.bind(this);
   }
 
   handleClick() {
     this.setState({
       isClicked: !this.state.isClicked,
 
+    });
+  }
+
+  handleComment(){
+    this.setState({
+      comment: !this.state.comment,
     });
   }
   render() {
@@ -125,11 +144,14 @@ class Comments extends React.Component {
               <p>&#10005;</p>
             </Button>
           </HeaderBar>
+
+          <Comment>
           <h1>Comments</h1>
             <Wrap>
 
             </Wrap>
-            <Button1>Add Comment</Button1>
+            <Button1 onClick ={this.handleComment}>Add Comment</Button1>
+          </Comment>
             <Footer/>
           </Dialog>
         </Shell>
