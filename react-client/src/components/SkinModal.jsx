@@ -4,9 +4,32 @@ import acne from "../assests/acne.png";
 import pores from "../assests/pores.png";
 import redness from "../assests/redness.png";
 import dryness from "../assests/dryness.png";
-import styled from 'styled-components';
+import styled ,{keyframes} from 'styled-components';
 import {Redirect , Link} from 'react-router-dom';
 
+
+const slideIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: translate(0px, 100%);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+`;
+
+const fadeIn = keyframes`
+  0% {
+    opacity: 0.2;
+
+  }
+  100% {
+    opacity: 1;
+
+  }
+  }
+`;
 
 const Container = styled.div`
     background: rgb(34, 34, 34 , 0.6) !important;
@@ -39,6 +62,10 @@ const Dialog = styled.div`
     position: relative;
     height: 80vh;
     background:rgb(235 200 169);
+    animation-duration: 400ms !important;
+    animation-iteration-count: 1 !important;
+    animation-fill-mode: both !important;
+    animation : ${slideIn};
 
     h1 {
       font-family :papyrus;
@@ -87,7 +114,7 @@ const Types = styled.div`
   display : grid;
   margin-left : 16%;
   margin-top : 6%;
-  margin-bottom : 3%;
+  margin-bottom : 6%;
   grid-template-rows: 1fr 1fr;
   grid-template-columns : 1fr 1fr;
   grid-row-gap :5%;
