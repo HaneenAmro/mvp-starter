@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import HairModal from './HairModal.jsx';
 import Footer from './Footer.jsx';
 import Header from './Header.jsx';
-
+import SkinModal from './SkinModal.jsx';
 
 
 const Intro = styled.div`
@@ -122,6 +122,7 @@ class Home extends React.Component {
       </Buttons>
       <Footer/>
       {this.state.hairClicked ? < HairModal/> : null }
+      {this.state.skinClicked ? <SkinModal/> : null}
 
     </div>
     )

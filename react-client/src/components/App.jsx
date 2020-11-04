@@ -5,6 +5,10 @@ import DryHair from './DryHair.jsx';
 import FrizzyHair from './FrizzyHair.jsx';
 import HairLoss from './HairLoss.jsx';
 import SplitEnds from './SplitEnds.jsx';
+import AcneSkin from './AcneSkin.jsx';
+import Pores from './Pores.jsx';
+import Redness from './Redness.jsx';
+import Dryness from './Dryness.jsx';
 
 import {Route, Switch ,Link } from "react-router-dom";
 import { BrowserRouter} from "react-router-dom";
@@ -25,13 +29,10 @@ class App extends React.Component {
           < Route  path="/frizzyHair" > <FrizzyHair/> </Route>
           < Route  path="/hairLoss" > <HairLoss/> </Route>
           < Route  path="/splitEnds" > <SplitEnds/> </Route>
-          {/* < Route  path="/frizzyHair" > <DryHair/> </Route>
-          < Route  path="/endHair" > <DryHair/> </Route>
-          < Route  path="/volumHair" > <DryHair/> </Route> */}
-          {/* < Route  path="/hair" > <DryHair/> </Route>
-          < Route  path="/Dryhair" > <DryHair/> </Route>
-          < Route  path="/Dryhair" > <DryHair/> </Route>
-          < Route  path="/Dryhair" > <DryHair/> </Route> */}
+          < Route  path="/acneSkin" > <AcneSkin/> </Route>
+          < Route  path="/pores"> <Pores/> </Route>
+          < Route  path="/redness"> <Redness/> </Route>
+          < Route  path="/dryness"> <Dryness/> </Route>
         </div>
 
       </BrowserRouter>

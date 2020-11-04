@@ -6,6 +6,7 @@ import banana from '../assests/banana.png';
 import coconut from '../assests/cocoOil.png';
 import styled from 'styled-components';
 import Comments from './Comments.jsx';
+import {Redirect , Link} from 'react-router-dom';
 
 const Inter = styled.div`
 margin-left: 90%;
@@ -44,6 +45,7 @@ h1 {
 const Wrapper =styled.div`
   display :flex;
   flex-direction: column;
+  margin-bottom : 6%;
 
 `;
 
@@ -90,7 +92,7 @@ background:rgb(235 200 169);
 height :50vh;
 width :40vw;
 margin-left: 55%;
-margin-top : -26%;
+margin-top : -32%;
 border-radius :10%;
 
 `;
@@ -179,8 +181,10 @@ class SplitEnds extends React.Component {
     return (
     <div>
       <Inter>
-        <img onClick={this.handleComment} src = "http://www.clker.com/cliparts/P/J/7/t/u/O/orange-plus-sign-hi.png"/>
-        <img  src ="https://tse4.mm.bing.net/th?id=OIP.FaHhw_GcZn7rHrVc5uATbgHaHa&pid=Api&P=0&w=300&h=300"/>
+        <img onClick={this.handleComment} src = "https://wpclipart.com/dl.php?img=/signs_symbol/speech_bubbles/speech_solid/comment_bubble_solid_orange_right_T.png"/>
+        <Link to ="/">
+        <img  src ="https://www.ownyourhome.gov.uk/wp-content/uploads/2015/09/generic-home-scheme-logo.png"/>
+        </Link>
       </Inter>
       <Header/>
       <Intro>

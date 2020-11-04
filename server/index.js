@@ -66,6 +66,37 @@ app.get('/splitEnds', function(req, res) {
   })
 })
 
+app.get('/acneSkin', function(req, res) {
+  res.sendFile(path.join(__dirname, '/../react-client/dist/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
+
+app.get('/pores', function(req, res) {
+  res.sendFile(path.join(__dirname, '/../react-client/dist/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
+app.get('/redness', function(req, res) {
+  res.sendFile(path.join(__dirname, '/../react-client/dist/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
+
+app.get('/dryness', function(req, res) {
+  res.sendFile(path.join(__dirname, '/../react-client/dist/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
+
 app.listen(3000, function() {
   console.log('listening on port 3000!');
 });

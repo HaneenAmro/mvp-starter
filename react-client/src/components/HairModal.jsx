@@ -5,6 +5,7 @@ import end from "../assests/end.png";
 import frizzy from "../assests/frizzy.png";
 import dry from "../assests/dry.png";
 import styled from 'styled-components';
+import {Redirect , Link} from 'react-router-dom';
 
 
 const Container = styled.div`
@@ -109,6 +110,8 @@ class HairModal extends React.Component {
       isClicked: false,
     }
     this.handleClick = this.handleClick.bind(this);
+
+
   }
 
   handleClick() {
@@ -117,6 +120,8 @@ class HairModal extends React.Component {
 
     });
   }
+
+
   render() {
     return (
       <div>
@@ -133,16 +138,24 @@ class HairModal extends React.Component {
             <h1>How would you describe your hair?</h1>
             <Types>
               <div>
-              <img src ={volume}/>
+              <Link to = '/hairLoss'>
+              <img src ={volume} />
+              </Link>
               </div>
               <div>
-              <img src ={frizzy}/>
+              <Link to = '/frizzyHair'>
+              <img src ={frizzy} />
+              </Link>
               </div>
               <div>
+              <Link to = '/dryHair'>
               <img src = {dry}/>
+              </Link>
               </div>
               <div>
-              <img src ={end}/>
+              <Link to = '/splitEnds'>
+              <img src ={end} />
+              </Link>
               </div>
 
             </Types>

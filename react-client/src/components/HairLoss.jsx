@@ -5,7 +5,27 @@ import gelatine from '../assests/gelatine.png';
 import almond from '../assests/almond.png';
 import avocado from '../assests/avocado.png';
 import styled from 'styled-components';
+import Comments from './Comments.jsx';
+import {Redirect , Link} from 'react-router-dom';
 
+
+const Inter = styled.div`
+margin-left: 90%;
+margin-top: 1%;
+position: absolute;
+display : flex;
+flex-direction: row;
+
+
+img {
+  width: 2vw;
+  height: 3vh;
+  margin-right:50%;
+  : hover {
+    opacity : 0.4;
+  }
+}
+`;
 
 
 const Intro = styled.div`
@@ -27,6 +47,7 @@ h1 {
 const Wrapper =styled.div`
   display :flex;
   flex-direction: column;
+  margin-bottom : 6%;
 
 `;
 
@@ -73,7 +94,7 @@ background:rgb(235 200 169);
 height :50vh;
 width :40vw;
 margin-left: 55%;
-margin-top : -26%;
+margin-top : -32%;
 border-radius :10%;
 
 `;
@@ -115,12 +136,15 @@ class HairLoss extends React.Component {
       oilClicked : false,
       cocoClicked: false,
       pumpkinClicked :false,
-      xButton :false
+      xButton :false,
+      comments :false
+
     }
     this.handleClick1 = this.handleClick1.bind(this);
     this.handleClick2 = this.handleClick2.bind(this);
     this.handleClick3 = this.handleClick3.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleComment = this.handleComment.bind(this);
 
   }
 
@@ -137,7 +161,7 @@ class HairLoss extends React.Component {
   }
   handleClick3(){
     this.setState({
-     pumpkinClicked : !this.state.pumpkinClicked,
+      pumpkinClicked : !this.state.pumpkinClicked,
     })
   }
 
@@ -147,12 +171,23 @@ class HairLoss extends React.Component {
     })
     window.location.reload();
   }
+  handleComment() {
+    this.setState({
+      comments : !this.state.comments,
+    })
+  }
 
   render() {
 
 
     return (
     <div>
+      <Inter>
+        <img onClick={this.handleComment} src = "https://wpclipart.com/dl.php?img=/signs_symbol/speech_bubbles/speech_solid/comment_bubble_solid_orange_right_T.png"/>
+        <Link to ="/">
+        <img  src ="https://www.ownyourhome.gov.uk/wp-content/uploads/2015/09/generic-home-scheme-logo.png"/>
+        </Link>
+      </Inter>
       <Header/>
       <Intro>
       <h1>Hair Loss</h1>
@@ -230,7 +265,7 @@ class HairLoss extends React.Component {
       </Dialog> : null}
 
       <Footer/>
-
+      {this.state.comments ? <Comments/> : null}
 
     </div>
     )

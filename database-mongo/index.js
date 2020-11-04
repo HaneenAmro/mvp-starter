@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/hairSkin');
 
 var db = mongoose.connection;
 
@@ -30,7 +30,7 @@ var selectAll = function(callback) {
 };
 
 const postComment = function(result,cb) {
-const {name , comment} =result;
+const {name , comment} = result;
 
 const Comment = new Item ({
   name : name,
